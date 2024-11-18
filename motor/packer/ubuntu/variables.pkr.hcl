@@ -1,3 +1,6 @@
+##############################
+# #  Proxmox API variables  ##
+##############################
 variable "lab_username" {
   type =  string
   default = ""
