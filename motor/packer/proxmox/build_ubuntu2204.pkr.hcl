@@ -2,13 +2,13 @@
 packer {
   required_plugins {
     proxmox = {
-      version = ">= 1.1.3"
+      version = ">= 1.2.1"
       source  = "github.com/hashicorp/proxmox"
     }
   }
 }
 
-source "proxmox-iso" "traininglab-server" {
+source "proxmox-iso" "ubuntu2204" {
   proxmox_url             = "https://${var.proxmox_node}:8006/api2/json"
   node                    = var.proxmox_hostname
   username                = var.proxmox_api_id
@@ -21,8 +21,8 @@ source "proxmox-iso" "traininglab-server" {
   cores                   = 2
   cpu_type                = "host"
   memory                  = 2048
-  vm_name                 = "traininglab-server"
-  tags                    = "traininglab_server"
+  vm_name                 = "ubuntu2204"
+  tags                    = "ubuntu2204"
   template_description    = "TrainingLab Ubuntu Server Template"
   insecure_skip_tls_verify = true
   task_timeout            = "30m"
